@@ -1,0 +1,110 @@
+.border{
+    border:2px solid red;
+    margin: 2px;
+}
+.flex{
+    display: flex;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.items-center{
+    align-items: center;
+}
+home-icon{
+    width: 50%;
+}
+.invert{
+    filter: invert(1);
+}
+.card-style{
+    /* flex: 0 0 calc(33.33% - 10px); 3 per row */
+    /* min-width: 150px; */
+    padding: 2%;
+    width: 30%;
+    background-color: #181818;
+    display: flex;
+    flex-direction: column;
+    transition: all 1s ease-in-out;
+    height: 75%
+}
+.card-style img{
+    /* width: 350x; */
+    /* min-width: 150px; */
+    height: 80%;
+}
+
+.card-desc-style{
+    color:#b3b3b3;
+    font-size: smaller;
+} 
+.play-button-style{
+    position: absolute;
+    
+    top: 54%;
+    left: 27%;
+    opacity: 0;
+    transition: all 1sec ease-in-out;
+}
+
+.play-button-style:hover{
+    opacity: 1;
+    /* top: 9.5rem; */
+
+
+}
+
+
+
+body {
+  background-color: #181818;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  /* Scrollbar styles applied site-wide */
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1b201d;
+  border-radius: 10px;
+  border: 3px solid #121212;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #1e2721;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #272c29 #121212;
+}
+
+
+
+@media (max-width:1100px){
+  .card-style{
+    width: 70%;
+    height: 100%;
+  }
+}
+
+
+@media (min-width: 600px) and (max-width: 1200px) {
+  .card-style{
+    width: 45%;
+    height: 100%;
+  }
+}
