@@ -9,20 +9,17 @@ function formatTime(seconds) {
 }
 
 async function getSongs() {
-    let a=await fetch("http://127.0.0.1:5500/spotify/songs/")
-    let response=await a.text();
-    let div=document.createElement("div")
-    div.innerHTML=response;
-    let as= div.getElementsByTagName("a");
-    let songs=[];
-    for(let index=0;index<as.length;index++){
-        const element=as[index];
-        if(element.href.endsWith(".mp3")){
-            songs.push(element.href.split("/songs/")[1])
-        }
+    try {
+        const res = await fetch("songs.json");
+        if (!res.ok) throw new Error("Songs list not found");
+        const songs = await res.json();
+        return songs;
+    } catch (err) {
+        console.error("Error loading songs:", err);
+        return [];
     }
-    return songs
 }
+
 const pauseIcon = `
 <svg width="35" height="35" viewBox="0 0 60 60">
   <circle cx="30" cy="30" r="30" fill="#F44336"/>
